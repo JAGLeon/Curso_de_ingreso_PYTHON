@@ -40,8 +40,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        valor_a = int(self.txt_operador_a.get())
+        valor_b = int(self.txt_operador_b.get())
+        resultado = valor_a % valor_b
+        alert("Resultado",f"El resto de dividir {valor_a} por {valor_b} es: {resultado}")
         
     
 if __name__ == "__main__":

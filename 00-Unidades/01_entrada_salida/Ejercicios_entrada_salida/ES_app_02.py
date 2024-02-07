@@ -22,12 +22,14 @@ class App(customtkinter.CTk):
         
         self.title("UTN FRA")
        
-        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Mostrar", command=self.btn_mostrar_on_click)
-        self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
+        self.btn_mostrar = customtkinter.CTkButton(master=self, text="Show", command=self.btn_mostrar_on_click)
+        self.btn_mostrar.grid(row=2, pady=130,padx=75, columnspan=2, sticky="nsew")
 
 
     def btn_mostrar_on_click(self):
-        pass
+        name = self.txt_nombre().get()
+        user = prompt(title = "Enter your username", prompt="Enter your username")
+        alert(title = "Personal information",message = f"Your user: {user}")
         
         
     
