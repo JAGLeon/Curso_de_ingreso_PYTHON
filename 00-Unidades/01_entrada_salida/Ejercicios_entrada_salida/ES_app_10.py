@@ -35,9 +35,9 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         importe = int(self.txt_importe.get())
-        descuento = 0.20
-        importe -= importe * descuento
-        alert("Resultado",f"El importe es: {importe}")
+        descuento = importe * 0.20
+        importe_final = importe - descuento
+        alert("Resultado",f"Importe = {importe} \nDecremento = {descuento} \nTotal = {importe_final}")
 
 
 if __name__ == "__main__":

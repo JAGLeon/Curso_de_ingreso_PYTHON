@@ -49,29 +49,36 @@ class App(customtkinter.CTk):
         self.btn_dividir.grid(row=5, pady=10, columnspan=2, sticky="nsew")
 
     def btn_sumar_on_click(self):
-        valor_a = int(self.txt_operador_a.get())
-        valor_b = int(self.txt_operador_b.get())
-
-        alert("Resultado",f"El resultado de la sumas es: {valor_a + valor_b}")
+        hace_la_cuenta(self,"suma")
 
     def btn_restar_on_click(self):
-        valor_a = int(self.txt_operador_a.get())
-        valor_b = int(self.txt_operador_b.get())
-
-        alert("Resultado",f"El resultado de la sumas es: {valor_a - valor_b}")
+        hace_la_cuenta(self,"resta")
 
     def btn_multiplicar_on_click(self):
-        valor_a = int(self.txt_operador_a.get())
-        valor_b = int(self.txt_operador_b.get())
-
-        alert("Resultado",f"El resultado de la sumas es: {valor_a * valor_b}")
+        hace_la_cuenta(self,"multiplicacion")
 
     def btn_dividir_on_click(self):
-        valor_a = int(self.txt_operador_a.get())
-        valor_b = int(self.txt_operador_b.get())
+        hace_la_cuenta(self,"division")
 
-        alert("Resultado",f"El resultado de la sumas es: {valor_a / valor_b}")
-        
+def hace_la_cuenta(self,cuenta):
+    valor_a = int(self.txt_operador_a.get())
+    valor_b = int(self.txt_operador_b.get())
+
+    match cuenta:
+        case "suma":
+            resultado = valor_a + valor_b
+        case "resta":
+            resultado = valor_a - valor_b
+        case "multiplicacion":
+            resultado = valor_a * valor_b
+        case "division":
+            resultado = valor_a / valor_b
+
+    mensaje = f"El resultado de la {cuenta} es: {resultado}"
+    alert("Resultado",mensaje)
+
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -33,9 +33,10 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        sueldo = int(self.txt_sueldo.get())
-        sueldo += sueldo * 0.15
-        alert("Resultado",f"El incremento es: {sueldo}")
+        sueldo = float(self.txt_sueldo.get())
+        incremento = sueldo * 0.15
+        sueldo_final = sueldo + incremento
+        alert("Resultado",f"Sueldo = {sueldo} \nIncremento = {incremento} \nTotal = {sueldo_final}")
         
     
 if __name__ == "__main__":

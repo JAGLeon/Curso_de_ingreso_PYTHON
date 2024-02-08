@@ -42,7 +42,8 @@ class App(customtkinter.CTk):
         valor_a = int(self.txt_operador_a.get())
         valor_b = int(self.txt_operador_b.get())
 
-        alert("Resultado",f"El resultado de la sumas es: {valor_a + valor_b}")
+        suma = valor_a + valor_b
+        alert("Resultado",f"El resultado de la sumas es: {suma}")
      
         
 if __name__ == "__main__":

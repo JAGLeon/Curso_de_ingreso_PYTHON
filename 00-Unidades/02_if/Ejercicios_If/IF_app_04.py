@@ -34,7 +34,19 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        pass
+        edad = self.txt_edad.get()
+        numero_edad = int(edad)
+
+        minimo_adolescente = 13
+        maximo_adolescente = 17
+
+        mayor_que = numero_edad >= minimo_adolescente
+        menor_que = numero_edad <= maximo_adolescente
+        
+        if mayor_que & menor_que:
+            mensaje = "Usted es un chamaquito, que esta en plena juventud"
+            alert("Adolescente",mensaje)
+
 
 
 if __name__ == "__main__":
