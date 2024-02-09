@@ -37,11 +37,14 @@ class App(customtkinter.CTk):
         edad = self.txt_edad.get()
         numero_edad = int(edad)
 
-        minimo_edad = 18
-        if numero_edad >= minimo_edad:
+        minimo_edad = 17
+        
+        if numero_edad > minimo_edad:
             mensaje = "MAYOR"
             alert("Edad",mensaje)
-        else:
+
+        minimo_edad = 18
+        if numero_edad < minimo_edad:
             mensaje = "MENOR"
             alert("Edad",mensaje) 
 

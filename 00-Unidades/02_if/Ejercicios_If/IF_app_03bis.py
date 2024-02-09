@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Anthony
+apellido: Garay
 ---
 Ejercicio: if_03bis
 ---
@@ -40,10 +40,10 @@ class App(customtkinter.CTk):
 
         if numero_altura > altura_minima  :
             mensaje = "Usted puede ser pivot"
-            alert("PIVOT", mensaje)
         else:
             mensaje = "Usted no puede ser pivot"
-            alert("PIVOT", mensaje)
+
+        alert("PIVOT", mensaje)
 
     
 

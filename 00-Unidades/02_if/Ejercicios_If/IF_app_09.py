@@ -27,8 +27,8 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-        
+        numero = random.randint(1, 10)
+        alert("",numero)
 
 if __name__ == "__main__":
     app = App()
