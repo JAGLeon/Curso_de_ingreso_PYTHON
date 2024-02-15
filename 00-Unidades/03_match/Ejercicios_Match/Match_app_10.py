@@ -6,8 +6,8 @@ import customtkinter
 
 
 '''
-nombre:
-apellido:
+nombre: Anthony
+apellido: Garay
 ---
 Ejercicio: Match_10
 ---
@@ -47,8 +47,32 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
-        pass
-            
+        estaciones = self.combobox_estaciones.get()
+        destino = self.combobox_destino.get()
+
+        match estaciones:
+            case "Invierno":
+                match destino:
+                    case "Bariloche":
+                        mensaje = "Se viaja"
+                    case _:
+                        mensaje = "No se viaja"
+            case "Verano":
+                match destino:
+                    case "Mar del plata" | "Cataratas":
+                        mensaje = "Se viaja"
+                    case _:
+                        mensaje = "No se viaja"
+            case "Otoño":
+                mensaje = "Se viaja"
+            case _:
+                match destino:
+                    case "Bariloche":
+                        mensaje = "No se viaja"
+                    case _:
+                        mensaje = "Se viaja"  
+    
+        alert(f"{destino} temporada {estaciones}", mensaje)
     
 if __name__ == "__main__":
     app = App()

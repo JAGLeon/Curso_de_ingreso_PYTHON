@@ -33,7 +33,7 @@ class App(customtkinter.CTk):
 
     def btn_mostrar_on_click(self):
         numero = random.randint(1, 10)
-        alert("",numero)  
+ 
         if numero > 5:
             mensaje = f"Promoción directa, la nota es {numero}"
         elif numero > 3:     

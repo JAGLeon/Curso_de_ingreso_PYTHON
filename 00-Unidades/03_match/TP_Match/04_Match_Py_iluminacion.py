@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Anthony
+apellido: Garay
 ---
 TP: Iluminación
 ---
@@ -43,10 +43,102 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
-        
-    
+        uni_lampara = 800
+        marca = self.combobox_marca.get()
+        cantidad = int(self.combobox_cantidad.get())
+
+        match cantidad:
+            case 6|7|8|9|10|11|12:
+                descuento = 50
+            case 5:
+                match marca:
+                    case "ArgentinaLuz" : 
+                        descuento = 40
+                    case _: 
+                        descuento = 30
+            case 4: 
+                match marca:
+                    case "ArgentinaLuz" | "FelipeLamparas" :
+                        descuento = 25
+                    case _: 
+                        descuento = 20
+            case 3: 
+                match marca:
+                    case "ArgentinaLuz" :
+                        descuento = 15
+                    case "FelipeLamparas" :
+                        descuento = 10
+                    case _: 
+                        descuento = 5
+            case _:
+                descuento = 0
+
+        total_bruto = uni_lampara * cantidad
+        total_descuento = total_bruto * descuento / 100
+        total_neto = total_bruto - total_descuento
+        mensaje = f"Cantidad = {cantidad}\nPrecio bruto = {total_bruto}\nDescuento aplicado = {total_descuento}\nTotal = {total_neto}"
+
+        if total_neto > 4000:
+            descuento_extra = total_neto * 0.05
+            total_neto_extra = total_neto - descuento_extra
+            mensaje = f"Cantidad = {cantidad}\nPrecio bruto = {total_bruto}\nDescuento aplicado = {total_descuento}\nDescuento extra = {descuento_extra}\nTotal = {total_neto_extra}"  
+
+        alert("Precio", mensaje)
+
+
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")
     app.mainloop()
+
+
+'''
+        match cantidad:
+            case 6|7|8|9|10|11|12:
+                descuento = 50
+            case 5:
+                if marca == "ArgentinaLuz":
+                    descuento = 40
+                else: 
+                    descuento = 30
+            case 4: 
+                if marca == "ArgentinaLuz" or marca == "FelipeLamparas" :
+                    descuento = 25
+                else:
+                    descuento = 20
+            case 3: 
+                if marca == "ArgentinaLuz" :
+                    descuento = 15
+                elif marca == "FelipeLamparas" :
+                    descuento = 10
+                else: 
+                    descuento = 5
+            case _:
+                descuento = 0
+
+
+        if cantidad > 5:
+            descuento = 50 
+        elif cantidad == 5:
+            match marca:
+                case "ArgentinaLuz" : 
+                    descuento = 40
+                case _: 
+                    descuento = 30
+        elif cantidad == 4:
+            match marca:
+                case "ArgentinaLuz" | "FelipeLamparas" :
+                    descuento = 25
+                case _: 
+                    descuento = 20
+        elif cantidad == 3:
+            match marca:
+                case "ArgentinaLuz" :
+                    descuento = 15
+                case "FelipeLamparas" :
+                    descuento = 10
+                case _: 
+                    descuento = 5
+        else:
+            descuento = 0'''

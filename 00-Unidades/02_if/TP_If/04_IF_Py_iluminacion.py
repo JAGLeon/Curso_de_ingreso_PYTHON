@@ -44,32 +44,52 @@ class App(customtkinter.CTk):
 
     def btn_calcular_on_click(self):
         uni_lampara = 800
-        descuento = 0
 
         compra_cantidad = int(self.combobox_cantidad.get())
         marca = self.combobox_marca.get()
 
-        if compra_cantidad > 9:
-            descuento = 55 / 100
-        elif compra_cantidad > 5:
-            descuento = 50 / 100
-        elif compra_cantidad == 5 and marca == "ArgentinaLuz":
-            descuento = 40 / 100
-        elif compra_cantidad == 5 and marca != "ArgentinaLuz":
-            descuento = 30 / 100
-        elif compra_cantidad == 4 and (marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
-            descuento = 25 / 100
-        elif compra_cantidad == 4 and (marca != "ArgentinaLuz" or marca != "FelipeLamparas"):
-            descuento = 20 / 100
-        elif compra_cantidad == 3 and marca == "ArgentinaLuz":
-            descuento = 15 / 100
-        elif compra_cantidad == 3 and marca == "FelipeLamparas":
-            descuento = 10 / 100
-        elif compra_cantidad == 3 :
-            descuento = 5 / 100
+        # if compra_cantidad > 9:
+        #     descuento = 55 / 100
+        # elif compra_cantidad > 5:
+        #     descuento = 50 / 100
+        # elif compra_cantidad == 5 and marca == "ArgentinaLuz":
+        #     descuento = 40 / 100
+        # elif compra_cantidad == 5 and marca != "ArgentinaLuz":
+        #     descuento = 30 / 100
+        # elif compra_cantidad == 4 and (marca == "ArgentinaLuz" or marca == "FelipeLamparas"):
+        #     descuento = 25 / 100
+        # elif compra_cantidad == 4 and (marca != "ArgentinaLuz" or marca != "FelipeLamparas"):
+        #     descuento = 20 / 100
+        # elif compra_cantidad == 3 and marca == "ArgentinaLuz":
+        #     descuento = 15 / 100
+        # elif compra_cantidad == 3 and marca == "FelipeLamparas":
+        #     descuento = 10 / 100
+        # elif compra_cantidad == 3 :
+        #     descuento = 5 / 100
+        if compra_cantidad > 5:
+            descuento = 50 
+        elif compra_cantidad == 5:
+            if marca == "ArgentinaLuz":
+                descuento = 40 
+            else:
+                descuento = 30 
+        elif compra_cantidad == 4:
+            if marca == "ArgentinaLuz" or marca == "FelipeLamparas":
+                descuento = 25 
+            else:
+                descuento = 20 
+        elif compra_cantidad == 3:
+            if marca == "ArgentinaLuz":
+                descuento = 15 
+            elif marca == "FelipeLamparas":
+                descuento = 10 
+            else:
+                descuento = 5 
+        else:
+            descuento = 0
 
         precio_total = uni_lampara * compra_cantidad
-        precio_descuento = precio_total * descuento
+        precio_descuento = precio_total * descuento / 100
         total = precio_total - precio_descuento
 
         alert("Precio", f"Cantidad = {compra_cantidad}\nPrecio bruto = {precio_total}\nDescuento aplicado = {precio_descuento}\nTotal = {total}")
