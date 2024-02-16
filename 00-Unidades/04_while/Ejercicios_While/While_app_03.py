@@ -29,9 +29,14 @@ class App(customtkinter.CTk):
         
     
     def btn_pedir_clave_on_click(self):
-        pass
-    
-    
+        solicitar_clave = prompt("Ingrese su clave","Clave")
+        clave = "utn750"
+
+        while solicitar_clave != clave:
+            solicitar_clave = prompt("La clave no coincide","Clave")
+            
+        alert("","Ingresaste")
+
 if __name__ == "__main__":
     app = App()
     app.geometry("300x300")

@@ -30,7 +30,14 @@ class App(customtkinter.CTk):
         
     
     def btn_validar_numero_on_click(self):
-        pass
+        solicitar_numero = prompt("Ingrese su Numero","Numero")
+        solicitar_numero = int(solicitar_numero)
+
+        while solicitar_numero > 9 or solicitar_numero < 0:
+            solicitar_numero = prompt("Ingrese su Numero","Numero")
+            solicitar_numero = int(solicitar_numero)
+
+        alert("","Ingresaste")
     
 if __name__ == "__main__":
     app = App()
