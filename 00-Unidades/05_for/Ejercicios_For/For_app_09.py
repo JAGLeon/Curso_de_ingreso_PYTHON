@@ -3,7 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
-
+import random
 '''
 nombre:
 apellido:
@@ -37,9 +37,38 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
-                
+        numero_aleatorio = random.randint(0, 100)
+        numero_ingresado = prompt("Ingrese","Numero")        
+        numero_ingresado = int(numero_ingresado)
 
+        for contador_intentos in range(1,8):
+            if numero_aleatorio == numero_ingresado:
+                match contador_intentos:
+                    case 1:
+                        mensaje = "Usted es un psíquico"
+                        break
+                    case 2:
+                        mensaje = "Excelente percepción"
+                        break
+                    case 3:
+                        mensaje = "Esto es suerte"
+                        break
+                    case 7:
+                        mensaje = "Perdiste, suerte para la próxima"
+                        break
+                    case _:
+                        mensaje = "Excelente técnica"
+                        break
+            else:
+                if numero_ingresado > numero_aleatorio:
+                    alert("Lejos o Cerca?","Se pasó…")
+                else:
+                    alert("Lejos o Cerca?","Falta…")
+                    
+                numero_ingresado = prompt("Re-ingrese","Numero")        
+                numero_ingresado = int(numero_ingresado)
+
+        alert(numero_ingresado,mensaje)                      
     
 if __name__ == "__main__":
     app = App()

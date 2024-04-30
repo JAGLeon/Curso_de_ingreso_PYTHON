@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre:Anthony 
+apellido:Garay
 ---
 Ejercicio: for_06
 ---
@@ -27,7 +27,15 @@ class App(customtkinter.CTk):
 
 
     def btn_mostrar_on_click(self):
-        pass
+        numero_ingresado = prompt("Ingrese un valor", "Numero:")
+        numero_ingresado = int(numero_ingresado)
+
+        contador_divisores = 0
+        for numero in range(1,numero_ingresado + 1):
+            if numero_ingresado % numero == 0:
+                contador_divisores += 1
+
+        alert("Divisores",f"Números divisores encontrados: {contador_divisores}")
         
     
 if __name__ == "__main__":
