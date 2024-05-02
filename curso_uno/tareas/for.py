@@ -7,7 +7,7 @@ def validar_e_ingresar_numero()-> int:
     while not numero.isdigit():
         numero = input("ERROR re-ingrese un numero : ")
 
-    return numero
+    return int(numero)
 
 
 def sumar(valor_uno: int, valor_dos: int)-> int:
