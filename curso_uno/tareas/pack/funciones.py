@@ -16,6 +16,13 @@ def dividir(valor_uno: int, valor_dos: int)-> float:
 def multiplicar(valor_uno: int, valor_dos: int)-> int:
     return valor_uno * valor_dos
 
+def menuOperaciones():
+    print('''\n1- Sumar
+2- Restar
+3- Dividir
+4- Multiplicar\n''')
+    return
+
 def whileOpciones(valor_uno: int, valor_dos: int):
     while True:
         opcion = input("\nIngrese un opcion : \n")

@@ -30,7 +30,6 @@ def encontrar_repetidos(lista: list):
             conteo[elemento] += 1
         else:
             conteo[elemento] = 1
-
     for clave, valor in conteo.items():
         if valor > 1:
             print(f"Se repitio el {clave} en {valor} ocasiones")

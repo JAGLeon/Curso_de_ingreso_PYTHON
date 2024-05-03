@@ -18,14 +18,9 @@ b- Ingresar segundo valor
 c- Operaciones
 d- Mostrar Resultado
 e- Salir\n''')
-    return input("\nSeleccione una opcion del menu : \n") #string
+    return input("\nSeleccione una opcion del menu : \n")
 
-def submenu():
-    print('''\n1- Sumar
-2- Restar
-3- Dividir
-4- Multiplicar\n''')
-    return
+
 
 primer_paso = False
 segundo_paso = False
@@ -44,14 +39,14 @@ while True:
                 print("\nDebe ingresar el primer valor\n")
         case "c":
             if segundo_paso:
-                submenu()
+                menuOperaciones()
                 resultado = whileOpciones(numero_uno,numero_dos)
                 tercer_paso = True
             else:
                 print("\nDebe ingresar un valor primero\n")
         case "d":
             if tercer_paso:
-                print(f"El resultado ez : {resultado}")
+                print(f"El resultado es : {resultado}")
                 primer_paso = False
                 segundo_paso = False
                 tercer_paso = False
@@ -61,4 +56,3 @@ while True:
                 print("\nDebe ingresar un valor primero\n")
         case "e":
             break
-
