@@ -32,7 +32,10 @@ def whileOpciones(valor_uno: int, valor_dos: int):
             case "restar" | "2":
                 return resta(valor_uno,valor_dos)
             case "dividir" | "3":
-                return dividir(valor_uno,valor_dos)
+                if valor_dos == 0:
+                    print("No se puede dividir por 0")
+                else:
+                    return dividir(valor_uno,valor_dos)
             case "multiplicar" | "4":
                 return multiplicar(valor_uno,valor_dos)
 
