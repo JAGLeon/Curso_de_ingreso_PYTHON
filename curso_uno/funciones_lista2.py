@@ -52,19 +52,20 @@ def mostrar_datos_alumnos(legajos, nombres, generos, notas_p1, notas_p2, promedi
     for i in range(TAM):
         print(f"{legajos[i]:20} | {nombres[i]:20} | {generos[i]:20} | {notas_p1[i]:20} | {notas_p2[i]:20} | {promedios[i]:20}"\
             , end = "\n")
+        
 
 def orden_por_promedios(ascendente = True):
     for i in range(TAM - 1):
         for j in range(i + 1, TAM):
             if (ascendente and promedios[i] > promedios[j]) or (not ascendente and promedios[i] < promedios[j]):
-                swaps_variables(legajos,i,j)
-                swaps_variables(nombres,i,j)
-                swaps_variables(generos,i,j)
-                swaps_variables(notas_p1,i,j)
-                swaps_variables(notas_p2,i,j)
-                swaps_variables(promedios,i,j)
+                swaps_valores(legajos,i,j)
+                swaps_valores(nombres,i,j)
+                swaps_valores(generos,i,j)
+                swaps_valores(notas_p1,i,j)
+                swaps_valores(notas_p2,i,j)
+                swaps_valores(promedios,i,j)
 
-def swaps_variables(lista,i,j):
+def swaps_valores(lista,i,j):
     validar_lista(lista)
     aux = lista[i]
     lista[i] = lista[j]
