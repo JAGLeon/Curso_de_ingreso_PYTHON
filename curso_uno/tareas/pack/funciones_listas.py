@@ -48,7 +48,9 @@ def promedio_lista(numeros):
     if len(numeros) > 0:
         return sumar_lista(numeros) / len(numeros)
     raise Exception("ERROR! Lista vacia")
-
+def validar_lista(lista):
+    if not isinstance(lista,list):
+        raise TypeError("Se esperaba una lista")
 def sumar_lista(lista):
     validar_lista(lista)
     suma = 0
