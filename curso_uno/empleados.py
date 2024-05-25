@@ -57,10 +57,13 @@ def mostrar_empleado(un_empleado):
     print(f" {un_empleado["legajo"]} {un_empleado["nombre"]:>15}  {un_empleado["apellido"]:>15}  {un_empleado["edad"]:>2}  {un_empleado["genero"]} {un_empleado["calle"]:>15}  {un_empleado["localidad"]:>15}  {un_empleado["provincia"]:>15}  {un_empleado["email"]:>15}  {un_empleado["sector"]:>15}  {un_empleado["sueldo"]:10.2f} ")
 
 
-def empleado_segun_legajo(lista,legajo)-> dict:
+def empleado_segun_legajo(lista,legajo)-> list:
+    retornar_lista = []
     for empleado in lista:
         if empleado["legajo"] == legajo:
-            return empleado
+            retornar_lista.append(empleado)
+            break
+    return retornar_lista
     
 def nombre_sector_empleado(lista):
     retornar_lista = []
